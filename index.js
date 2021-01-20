@@ -1,6 +1,7 @@
 const Vonage = require('@vonage/server-sdk');
+const Nexmo = require('nexmo');
 
-const vonage = new Vonage({
+const nexmo = new Nexmo({
   apiKey: 'b8bb5128',
   apiSecret: '618DITlZy7CzgcVW'
 })
@@ -8,7 +9,7 @@ let from = 'Vonage APIs';
 let to = '2482576586';
 let text = "👋Hello Testing Msg from A. Rahman";
 
-vonage.message.sendSms(from, to, text, {
+nexmo.message.sendSms(from, to, text, {
   type: "unicode"
 }, (err, responseData) => {
   if (err) {
